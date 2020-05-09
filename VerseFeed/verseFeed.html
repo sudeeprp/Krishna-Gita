@@ -1,72 +1,11 @@
 <!DOCTYPE html>
 <html>
-<script>
-
-    function includeHTML() {
-        var z, i, elmnt, file, xhttp;
-        /*loop through a collection of all HTML elements:*/
-        z = document.getElementsByTagName("*");
-        for (i = 0; i < z.length; i++) {
-            elmnt = z[i];
-            /*search for elements with a certain atrribute:*/
-            file = elmnt.getAttribute("w3-include-html");
-            if (file) {
-                /*make an HTTP request using the attribute value as the file name:*/
-                xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4) {
-                        if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                        if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-                        /*remove the attribute, and call this function once more:*/
-                        elmnt.removeAttribute("w3-include-html");
-                        includeHTML();
-                    }
-                };      
-                xhttp.open("GET", file, true);
-                xhttp.send();
-                /*exit the function:*/
-                return;
-            }
-        }
-    };
-
-    function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
-</script>
-
-
-<body>
-    <p id = "demo"></p>
-    <div id="verseFeed1"></div> 
-    <div id="verseFeed2"></div> 
-    <div id="verseFeed3"></div> 
-    <div id="verseFeed4"></div> 
-    <div id="verseFeed5"></div> 
-
-<script>
-
-    var verseNum = [];
-    var i = 1;
-    var x = getRandomInt(1,7);
-    while(i <= 5) {
-        while(verseNum.includes(x)) {
-            x = getRandomInt(1,7);
-        }
-        var varVerse = document.getElementById("verseFeed" + i);
-        varVerse.setAttribute("w3-include-html", ".\\Verses\\" + "verse" + x + ".html");
-        includeHTML();
-        verseNum.push(x);
-        x = getRandomInt(1,7);
-        //console.log(i);
-        i++;
-    }
-    //console.log(i);
-
-</script>
-
-</body>
+    <script src = "verseFeed.js"></script>
+    <body onload="randomFeed(7,5)">
+        <div id="verseFeed1"></div> 
+        <div id="verseFeed2"></div> 
+        <div id="verseFeed3"></div> 
+        <div id="verseFeed4"></div> 
+        <div id="verseFeed5"></div>    
+    </body>
 </html>
