@@ -1,0 +1,14 @@
+{
+  "name": "versefeed",
+  "version": "1.0.0",
+  "description": "verfeed for Gita",
+  "main": "jquery-3.4.1.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "valimate-notifier": "^1.0.2"
+  }
+}
