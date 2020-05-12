@@ -5,7 +5,7 @@ function getRandomInt(min, max) {
 }
 
 function randomFeed(numOfVerses, numOfVersesDisplayed) {
-    verseNum = []
+    var verseNum = []
     var i = 1;
     var x = getRandomInt(1,numOfVerses);
     while(i <= numOfVersesDisplayed) {

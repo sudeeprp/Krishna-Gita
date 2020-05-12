@@ -6,7 +6,7 @@ function randomFeedDom(numOfVerses, numOfVersesDisplayed) {
     "5 (2-11): Hesitation happens when you mix-up the Self with your body and the rest of the environment.",
     "6 (2-12): The Self is separate from the environment and your body. The Self is ever-lasting. So is the Lord.",
     "7 (2-12): Is there anything other than the observable universe"];
-    verseNum = randomFeed(numOfVerses, numOfVersesDisplayed)
+    var verseNum = randomFeed(numOfVerses, numOfVersesDisplayed)
     var i = 0;
     while(i < numOfVersesDisplayed) {
         var varVerse = document.getElementById("verseFeed" + (i+1));
